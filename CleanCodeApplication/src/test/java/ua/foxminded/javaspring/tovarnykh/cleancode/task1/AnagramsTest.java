@@ -1,4 +1,4 @@
-package ua.foxminded.javaspring.Tovarnykh.cleancode.task1;
+package ua.foxminded.javaspring.tovarnykh.cleancode.task1;
 
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 //import static org.junit.jupiter.api.Assertions.assertNotEquals;

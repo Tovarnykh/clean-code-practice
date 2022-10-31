@@ -1,11 +1,4 @@
 /CleanCodeApplication/.classpath
 /CleanCodeApplication/.project
-/CleanCodeApplication/.settings/.jsdtscope
-/CleanCodeApplication/.settings/org.eclipse.jdt.core.prefs
-/CleanCodeApplication/.settings/org.eclipse.m2e.core.prefs
-/CleanCodeApplication/.settings/org.eclipse.wst.common.component
-/CleanCodeApplication/.settings/org.eclipse.wst.common.project.facet.core.xml
-/CleanCodeApplication/.settings/org.eclipse.wst.jsdt.ui.superType.container
-/CleanCodeApplication/.settings/org.eclipse.wst.jsdt.ui.superType.name
-/CleanCodeApplication/.settings/org.eclipse.wst.validation.prefs
+/CleanCodeApplication/.settings/
 /CleanCodeApplication/target/
