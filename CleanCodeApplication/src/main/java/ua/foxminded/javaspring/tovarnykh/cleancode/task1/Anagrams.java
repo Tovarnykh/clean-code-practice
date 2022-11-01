@@ -5,14 +5,12 @@ import java.util.stream.Collectors;
 
 /**
 *
-* @author Viktor Tovarnykh
-* @version 0.0.3
+* @author Victor Tovarnykh
+* @version 0.0.4
  *@since 0.0.1
 */
 public class Anagrams {
 
-	/** Represents the SPACE in the constant format.
-	*/
 	static final String SPACE = " ";
 	
 	/**
@@ -58,18 +56,13 @@ public class Anagrams {
 
 		StringBuilder reversedWord = new StringBuilder(word);
 		int rightWordBorder = word.length() - 1, leftWordBorder = 0;
-
 		while (leftWordBorder < rightWordBorder) {
 
 			if (!Character.isAlphabetic(reversedWord.charAt(leftWordBorder))) {
 				leftWordBorder++;
-			}
-
-			else if (!Character.isAlphabetic(reversedWord.charAt(rightWordBorder))) {
+			} else if (!Character.isAlphabetic(reversedWord.charAt(rightWordBorder))) {
 				rightWordBorder--;
-			}
-
-			else {
+			} else {
 				char tmp = reversedWord.charAt(leftWordBorder);
 				reversedWord.setCharAt(leftWordBorder, reversedWord.charAt(rightWordBorder));
 				reversedWord.setCharAt(rightWordBorder, tmp);
@@ -78,7 +71,6 @@ public class Anagrams {
 			}
 
 		}
-
 		return reversedWord.toString();
 	}
 
