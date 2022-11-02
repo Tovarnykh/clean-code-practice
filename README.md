@@ -49,3 +49,19 @@ java -jar CleanCodeApplicationTask1.jar
 ```
 
 To launch the program **Java11+** requires.
+
+## Task 1.2 Unit tests
+
+**Assignment**:
+
+Pick-up previous task and write JUnit tests for it.
+
+* Use Junit5 dependency
+
+* Tests should run with project build
+
+* Maven surefire plugin
+
+* Use appropriate test methods naming convention (ask Mentor for preferred one)
+
+* Add Sonar lint plugin support to your IDE.

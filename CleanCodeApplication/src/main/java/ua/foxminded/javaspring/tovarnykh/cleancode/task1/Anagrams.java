@@ -6,12 +6,21 @@ import java.util.stream.Collectors;
 /**
 *
 * @author Victor Tovarnykh
-* @version 0.0.4
+* @version 0.0.5
  *@since 0.0.1
 */
 public class Anagrams {
 
-	static final String SPACE = " ";
+	private static final String SPACE = " ";
+	
+	/**
+	 * Method name: reverseSentence
+	 *
+	 * Private Constructor that does anything.
+	 */
+	private Anagrams() {
+		
+	}
 	
 	/**
 	 * Method name: reverseSentence
@@ -55,7 +64,9 @@ public class Anagrams {
 		}
 
 		StringBuilder reversedWord = new StringBuilder(word);
-		int rightWordBorder = word.length() - 1, leftWordBorder = 0;
+		int rightWordBorder = word.length() - 1;
+		int leftWordBorder = 0;
+		
 		while (leftWordBorder < rightWordBorder) {
 
 			if (!Character.isAlphabetic(reversedWord.charAt(leftWordBorder))) {
