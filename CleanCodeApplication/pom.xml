@@ -45,7 +45,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>CleanCodeApplicationTask1</finalName>
+		<finalName>CleanCodeApplication</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
