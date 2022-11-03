@@ -40,7 +40,9 @@ public class Anagrams {
 			throw new IllegalArgumentException("Illegal argument");
 		}
 
-		return Arrays.stream(sentence.split(SPACE)).map(Anagrams::reverseWord).collect(Collectors.joining(SPACE));
+		return Arrays.stream(sentence.split(SPACE))
+				.map(Anagrams::reverseWord)
+				.collect(Collectors.joining(SPACE));
 
 	}
 
@@ -59,7 +61,7 @@ public class Anagrams {
 	 */
 	public static String reverseWord(String word) {
 
-		if ((word == null)) {
+		if (word == null) {
 			throw new IllegalArgumentException("Illegal argument");
 		}
 
@@ -72,7 +74,6 @@ public class Anagrams {
 		int leftWordBorder = 0;
 
 		while (leftWordBorder < rightWordBorder) {
-
 			if (!Character.isAlphabetic(reversedWord.charAt(leftWordBorder))) {
 				leftWordBorder++;
 			} else if (!Character.isAlphabetic(reversedWord.charAt(rightWordBorder))) {
@@ -84,7 +85,6 @@ public class Anagrams {
 				leftWordBorder++;
 				rightWordBorder--;
 			}
-
 		}
 		return reversedWord.toString();
 	}

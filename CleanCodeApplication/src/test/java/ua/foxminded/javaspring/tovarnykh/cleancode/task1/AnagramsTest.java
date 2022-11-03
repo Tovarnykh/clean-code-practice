@@ -69,13 +69,19 @@ class AnagramsTest {
 
 	@Test
 	void reverseSentence_SingleSpaceIsSingle_True() {
-		assertEquals(1, Anagrams.reverseSentence("0!9 .87,6'5,4321").chars().filter(symbol -> symbol == ' ').count());
+		assertEquals(1, Anagrams.reverseSentence("0!9 .87,6'5,4321")
+				.chars()
+				.filter(symbol -> symbol == ' ')
+				.count());
 	}
 
 	@Test
 	void reverseSentence_SeveralSpaceIsSeveral_True() {
 		assertEquals(11,
-				Anagrams.reverseSentence("af0!9     .87,6'5,   43   21").chars().filter(symbol -> symbol == ' ').count());
+				Anagrams.reverseSentence("af0!9     .87,6'5,   43   21")
+				.chars()
+				.filter(symbol -> symbol == ' ')
+				.count());
 	}
 
 	@Test
