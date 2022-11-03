@@ -4,17 +4,27 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
-*
-* @author Victor Tovarnykh
-* @version 0.0.4
- *@since 0.0.1
-*/
+ *
+ * @author Victor Tovarnykh
+ * @version 0.0.5
+ * @since 0.0.1
+ */
 public class Anagrams {
 
-	static final String SPACE = " ";
-	
+	private static final String SPACE = " ";
+
 	/**
 	 * Method name: reverseSentence
+	 *
+	 * Private Constructor that does anything.
+	 */
+	private Anagrams() {
+
+	}
+
+	/**
+	 * Method name: reverseSentence
+	 * 
 	 * @param sentence The sentence to be reverted.
 	 * @return (String) Reverted sentence.
 	 * @throws IllegalArgumentException
@@ -38,6 +48,7 @@ public class Anagrams {
 
 	/**
 	 * Method name: reverseWord
+	 * 
 	 * @param word The word to be reverted.
 	 * @return (String) Reverted word.
 	 * @throws IllegalArgumentException
@@ -50,14 +61,19 @@ public class Anagrams {
 	 */
 	public static String reverseWord(String word) {
 
-		if (word == null || word.isBlank()) {
+		if (word == null) {
 			throw new IllegalArgumentException("Illegal argument");
 		}
 
-		StringBuilder reversedWord = new StringBuilder(word);
-		int rightWordBorder = word.length() - 1, leftWordBorder = 0;
-		while (leftWordBorder < rightWordBorder) {
+		if (word.isBlank()) {
+			return word;
+		}
 
+		StringBuilder reversedWord = new StringBuilder(word);
+		int rightWordBorder = word.length() - 1;
+		int leftWordBorder = 0;
+
+		while (leftWordBorder < rightWordBorder) {
 			if (!Character.isAlphabetic(reversedWord.charAt(leftWordBorder))) {
 				leftWordBorder++;
 			} else if (!Character.isAlphabetic(reversedWord.charAt(rightWordBorder))) {
@@ -69,7 +85,6 @@ public class Anagrams {
 				leftWordBorder++;
 				rightWordBorder--;
 			}
-
 		}
 		return reversedWord.toString();
 	}
