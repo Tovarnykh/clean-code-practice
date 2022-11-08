@@ -74,7 +74,7 @@ public class Anagrams {
 		int leftWordBorder = 0;
 
 		while (leftWordBorder < rightWordBorder) {
-			if (!Character.isAlphabetic(reversedWord.charAt(leftWordBorder))) {
+			  if (!Character.isAlphabetic(reversedWord.charAt(leftWordBorder))) {
 				leftWordBorder++;
 			} else if (!Character.isAlphabetic(reversedWord.charAt(rightWordBorder))) {
 				rightWordBorder--;

@@ -41,7 +41,7 @@ public class IntegerDivision {
 	public static String makeDivision(int dividend, int divisor) {
 
 		if (divisor == 0) {
-			throw new IllegalArgumentException("Divisor cannot be 0, division by zero");
+			  return "Divisor cannot be 0, division by zero";
 		}
 
 		StringBuilder calculations = new StringBuilder();
@@ -137,12 +137,12 @@ public class IntegerDivision {
 
 		return devideCalculations.toString();
 	}
-	
+
 	/**
 	 * Method name: assemblyString
 	 * 
-	 * @param numberOfSymbols  Numbers we receive during calculations.
-	 * @param delimiter  Delimiter between numbers.
+	 * @param numberOfSymbols Numbers we receive during calculations.
+	 * @param delimiter       Delimiter between numbers.
 	 * @return (String) Line with numbers we write after subtraction.
 	 * 
 	 *         Inside the function: 1. Creating new line. 2. Fill it with numbers.
@@ -155,23 +155,22 @@ public class IntegerDivision {
 		}
 		return newString.toString();
 	}
-	
-	
+
 	/**
 	 * Method name: makeDivider
 	 * 
-	 * @param reminderNumber  Number we keep in memory to subtract.
-	 * @param amountOfTabulations  How many tabs we need to fill in.
+	 * @param reminderNumber      Number we keep in memory to subtract.
+	 * @param amountOfTabulations How many tabs we need to fill in.
 	 * @return (String) Line to fit ladder like view.
 	 */
 	private static String makeDivider(Integer reminderNumber, Integer amountOfTabulations) {
 		return assemblyString(amountOfTabulations, ' ') + assemblyString(calculateDigit(reminderNumber), '-');
 	}
-	
+
 	/**
 	 * Method name: calculateDigit
 	 * 
-	 * @param dividend  Number we keep in memory to subtract.
+	 * @param dividend Number we keep in memory to subtract.
 	 * @return (int) Number after subtraction.
 	 */
 	private static int calculateDigit(int dividend) {

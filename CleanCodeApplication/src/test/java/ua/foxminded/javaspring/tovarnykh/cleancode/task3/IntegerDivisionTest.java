@@ -108,9 +108,7 @@ class IntegerDivisionTest {
 	
 	@Test
    void makeDivision_DivisionWithZeroArgument_ExceptionThrown() {
-       IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> IntegerDivision.makeDivision(78945, 0),
- 				"Divisor cannot be 0, division by zero");
- 		assertEquals("Divisor cannot be 0, division by zero", thrown.getMessage());
+ 		assertEquals("Divisor cannot be 0, division by zero", IntegerDivision.makeDivision(33, 0));
    }
 
 }
