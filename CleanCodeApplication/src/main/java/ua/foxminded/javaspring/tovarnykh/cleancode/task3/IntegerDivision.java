@@ -1,4 +1,4 @@
-package ua.foxminded.javaspring.tovarnykh.cleancode.task2;
+package ua.foxminded.javaspring.tovarnykh.cleancode.task3;
 
 /**
  *

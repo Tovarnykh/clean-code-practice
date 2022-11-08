@@ -1,4 +1,4 @@
-package ua.foxminded.javaspring.tovarnykh.cleancode.task2;
+package ua.foxminded.javaspring.tovarnykh.cleancode.task3;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import ua.foxminded.javaspring.tovarnykh.cleancode.task1.Anagrams;
+import ua.foxminded.javaspring.tovarnykh.cleancode.task3.IntegerDivision;
 
 class IntegerDivisionTest {
 
