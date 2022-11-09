@@ -47,6 +47,23 @@ mvc package
 ```
 java -jar CleanCodeApplication.jar
 ```
+```
+╔═══════════════════════════════╗
+║Select which Program to execute║
+╠───────────────────────────────╣
+║1 - Anagrams                   ║
+║2 - IntegerDivision            ║
+║                               ║
+║3 - Any symbol to Exit         ║
+╚═══════════════════════════════╝
+ >1
+╔═════════════════════════╗
+║Insert a word or sentence║
+╟─────────────────────────╢
+ in:h.e!ll0o W...orld!
+ out:o.l!le0h d...lroW!
+╚═════════════════════════╝
+```
 
 To launch the program **Java11+** requires.
 
@@ -80,17 +97,29 @@ Write an integer-division application that divides numbers and prints results in
 
 **Example**:
 ```
-|Enter number to execute|
-1 Anagrams
-2 IntegerDivision
-3 Exit
-2
-Insert dividend:
-20
-Insert divisor:
-2
-_20|2
- 2 |--
- - |10
-  0
+╔═══════════════════════════════╗
+║Select which Program to execute║
+╠───────────────────────────────╣
+║1 - Anagrams                   ║
+║2 - IntegerDivision            ║
+║                               ║
+║3 - Any symbol to Exit         ║
+╚═══════════════════════════════╝
+ >2
+╔═══════════════════════════╗
+║Insert dividend and divisor║
+╟───────────────────────────╢
+║      Insert dividend      ║
+ >140
+║      Insert divisor       ║
+ >5
+╚═══════════════════════════╝
+
+_140|5
+ 10 |--
+ -- |28
+ _40
+  40
+  --
+   0
 ```
