@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 /**
  *
  * @author Victor Tovarnykh
- * @version 0.0.5
+ * @version 0.1.0
  * @since 0.0.1
  */
 public class Anagrams {
@@ -14,7 +14,7 @@ public class Anagrams {
 	private static final String SPACE = " ";
 
 	/**
-	 * Method name: reverseSentence
+	 * Method name: Anagrams
 	 *
 	 * Private Constructor that does anything.
 	 */
@@ -74,7 +74,7 @@ public class Anagrams {
 		int leftWordBorder = 0;
 
 		while (leftWordBorder < rightWordBorder) {
-			if (!Character.isAlphabetic(reversedWord.charAt(leftWordBorder))) {
+			  if (!Character.isAlphabetic(reversedWord.charAt(leftWordBorder))) {
 				leftWordBorder++;
 			} else if (!Character.isAlphabetic(reversedWord.charAt(rightWordBorder))) {
 				rightWordBorder--;
