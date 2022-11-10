@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import ua.foxminded.javaspring.tovarnykh.cleancode.task1.Anagrams;
 import ua.foxminded.javaspring.tovarnykh.cleancode.task3.IntegerDivision;
+import ua.foxminded.javaspring.tovarnykh.cleancode.task4.СharsСounter;
 
 public class Main {
 
@@ -28,8 +29,9 @@ public class Main {
 								╠───────────────────────────────╣
 								║1 - Anagrams                   ║
 								║2 - IntegerDivision            ║
+								║3 - CharsCounter               ║
 								║                               ║
-								║3 - Any symbol to Exit         ║
+								║? - Any symbol to Exit         ║
 								╚═══════════════════════════════╝
 								 >""");
 
@@ -39,6 +41,8 @@ public class Main {
 						taskOneExecutor();
 				} else if (choice.equals("2")) {
 						taskThreeExecutor();
+				} else if (choice.equals("3")) {
+						taskFourExecutor();
 				} else {
 						System.out.print("Shutting Down...");
 				}
@@ -89,7 +93,19 @@ public class Main {
 						System.out.println("Cannot make division with such arguments");
 
 				}
+		}
 
+		private static void taskFourExecutor() {
+				System.out.print("""
+								╔═════════════════════════╗
+								║Insert a word or sentence║
+								╟─────────────────────────╢
+								 in:""");
+				in = new Scanner(System.in);
+				System.out.print("\n" + СharsСounter.countChars(in.nextLine()) + """
+
+								╚═════════════════════════╝
+								""");
 		}
 
 }

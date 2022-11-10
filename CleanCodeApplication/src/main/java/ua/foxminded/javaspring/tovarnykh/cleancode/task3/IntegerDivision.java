@@ -3,7 +3,7 @@ package ua.foxminded.javaspring.tovarnykh.cleancode.task3;
 /**
  *
  * @author Victor Tovarnykh
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.1
  */
 public class IntegerDivision {

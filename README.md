@@ -53,8 +53,9 @@ java -jar CleanCodeApplication.jar
 ╠───────────────────────────────╣
 ║1 - Anagrams                   ║
 ║2 - IntegerDivision            ║
+║3 - CharsCounter               ║
 ║                               ║
-║3 - Any symbol to Exit         ║
+║? - Any symbol to Exit         ║
 ╚═══════════════════════════════╝
  >1
 ╔═════════════════════════╗
@@ -102,8 +103,9 @@ Write an integer-division application that divides numbers and prints results in
 ╠───────────────────────────────╣
 ║1 - Anagrams                   ║
 ║2 - IntegerDivision            ║
+║3 - CharsCounter               ║
 ║                               ║
-║3 - Any symbol to Exit         ║
+║? - Any symbol to Exit         ║
 ╚═══════════════════════════════╝
  >2
 ╔═══════════════════════════╗
@@ -122,4 +124,45 @@ _140|5
   40
   --
    0
+```
+
+## Task 1.4 Collection Framework
+
+**Assignment**:
+
+Write a char-counter application  that takes a string and returns the number of unique characters in the string.
+
+It is expected that a string with the same character sequence may be passed several times to the method.
+
+Since the counting operation can be time-consuming, the method should cache the results, so that when the method is given a string previously encountered, it should return the result from the cache.
+
+Use collections and maps where appropriate.
+
+**Example**:
+```
+╔═══════════════════════════════╗
+║Select which Program to execute║
+╠───────────────────────────────╣
+║1 - Anagrams                   ║
+║2 - IntegerDivision            ║
+║3 - CharsCounter               ║
+║                               ║
+║? - Any symbol to Exit         ║
+╚═══════════════════════════════╝
+ >3
+╔═════════════════════════╗
+║Insert a word or sentence║
+╟─────────────────────────╢
+ in:Hello World
+
+ 'h' - 1
+ 'e' - 1
+ 'l' - 3
+ 'o' - 2
+ ' ' - 1
+ 'w' - 1
+ 'r' - 1
+ 'd' - 1
+
+╚═════════════════════════╝
 ```
