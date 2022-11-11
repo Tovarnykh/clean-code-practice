@@ -1,7 +1,6 @@
 package ua.foxminded.javaspring.tovarnykh.cleancode.main;
 
 import java.util.Scanner;
-
 import ua.foxminded.javaspring.tovarnykh.cleancode.task1.Anagrams;
 import ua.foxminded.javaspring.tovarnykh.cleancode.task3.IntegerDivision;
 import ua.foxminded.javaspring.tovarnykh.cleancode.task4.СharsСounter;
@@ -96,13 +95,24 @@ public class Main {
 		}
 
 		private static void taskFourExecutor() {
+				in = new Scanner(System.in);
+				String sentence = "";
+
 				System.out.print("""
 								╔═════════════════════════╗
 								║Insert a word or sentence║
+								║      Or Write Exit      ║
 								╟─────────────────────────╢
-								 in:""");
-				in = new Scanner(System.in);
-				System.out.print("\n" + СharsСounter.countChars(in.nextLine()) + """
+								""");
+				while (!"exit".equalsIgnoreCase(sentence)) {
+						System.out.print("in:");
+						sentence = in.nextLine();
+
+						if (!"exit".equalsIgnoreCase(sentence))
+								System.out.print(СharsСounter.countChars(sentence));
+				}
+
+				System.out.println("""
 
 								╚═════════════════════════╝
 								""");
