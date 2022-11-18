@@ -14,50 +14,50 @@ import com.google.common.cache.LoadingCache;
  */
 public class CacheInstrument {
 
-		/**
-		 * Variable name: CACHE
-		 * 
-		 * Stores cached data.
-		 */
-		private static final LoadingCache<String, LinkedHashMap<Character, Integer>> CACHE = CacheBuilder.newBuilder()
-						.build(new CacheLoader<>() {
+    /**
+     * Variable name: CACHE
+     * 
+     * Stores cached data.
+     */
+    private static final LoadingCache<String, LinkedHashMap<Character, Integer>> CACHE = CacheBuilder.newBuilder()
+	    .build(new CacheLoader<>() {
 
-								@Override
-								public LinkedHashMap<Character, Integer> load(String key) {
+		@Override
+		public LinkedHashMap<Character, Integer> load(String key) {
 
-										LinkedHashMap<Character, Integer> elements = new LinkedHashMap<>();
+		    LinkedHashMap<Character, Integer> elements = new LinkedHashMap<>();
 
-										key.chars().forEach((num) -> {
-												Character character = (char) num;
-												if (elements.containsKey(character)) {
-														elements.put(character, elements.get(character) + 1);
-												} else {
-														elements.put(character, 1);
-												}
-										});
+		    key.chars().forEach((num) -> {
+			Character character = (char) num;
+			if (elements.containsKey(character)) {
+			    elements.put(character, elements.get(character) + 1);
+			} else {
+			    elements.put(character, 1);
+			}
+		    });
 
-										return elements;
-								}
-						});
-
-		private CacheInstrument() {
-
+		    return elements;
 		}
+	    });
 
-		/**
-		 * Method name: get
-		 * 
-		 * @param sentence String which characters needs to be counted.
-		 * @return (LinkedHashMap) Map with stored data.
-		 * 
-		 *         Inside the function: Check is sentence is presented in cache, if not
-		 *         loads the data inside the cache
-		 */
-		public static LinkedHashMap<Character, Integer> get(String sentence) {
-				if (CACHE.getIfPresent(sentence) != null) {
-						System.out.println("Loaded from CACHE!");
-				}
-				return CACHE.getUnchecked(sentence);
-		}
+    private CacheInstrument() {
+
+    }
+
+    /**
+     * Method name: get
+     * 
+     * @param sentence String which characters needs to be counted.
+     * @return (LinkedHashMap) Map with stored data.
+     * 
+     *         Inside the function: Check is sentence is presented in cache, if not
+     *         loads the data inside the cache
+     */
+    public static LinkedHashMap<Character, Integer> get(String sentence) {
+	if (CACHE.getIfPresent(sentence) != null) {
+	    System.out.println("Loaded from CACHE!");
+	}
+	return CACHE.getUnchecked(sentence);
+    }
 
 }
