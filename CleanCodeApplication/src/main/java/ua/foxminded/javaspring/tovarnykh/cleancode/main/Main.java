@@ -1,13 +1,14 @@
 package ua.foxminded.javaspring.tovarnykh.cleancode.main;
 
 import java.util.Scanner;
-
 import ua.foxminded.javaspring.tovarnykh.cleancode.task1.Anagrams;
 import ua.foxminded.javaspring.tovarnykh.cleancode.task3.IntegerDivision;
+import ua.foxminded.javaspring.tovarnykh.cleancode.task4.СharsСounter;
 
 public class Main {
 
 		private static Scanner in;
+		private static final String EXIT = "exit";
 
 		public static void main(String[] args) {
 				in = new Scanner(System.in);
@@ -28,17 +29,20 @@ public class Main {
 								╠───────────────────────────────╣
 								║1 - Anagrams                   ║
 								║2 - IntegerDivision            ║
+								║3 - CharsCounter               ║
 								║                               ║
-								║3 - Any symbol to Exit         ║
+								║? - Any symbol to Exit         ║
 								╚═══════════════════════════════╝
 								 >""");
 
-				String choice = in.next();
+				String choice = in.nextLine();
 
 				if (choice.equals("1")) {
 						taskOneExecutor();
 				} else if (choice.equals("2")) {
 						taskThreeExecutor();
+				} else if (choice.equals("3")) {
+						taskFourExecutor();
 				} else {
 						System.out.print("Shutting Down...");
 				}
@@ -57,7 +61,6 @@ public class Main {
 								║Insert a word or sentence║
 								╟─────────────────────────╢
 								 in:""");
-				in = new Scanner(System.in);
 				System.out.print(" out:" + Anagrams.reverseSentence(in.nextLine()) + """
 
 								╚═════════════════════════╝
@@ -77,9 +80,9 @@ public class Main {
 								╟───────────────────────────╢
 								║      Insert dividend      ║
 								 >""");
-				String dividend = in.next();
+				String dividend = in.nextLine();
 				System.out.print("║      Insert divisor       ║" + "\n >");
-				String divisor = in.next();
+				String divisor = in.nextLine();
 				System.out.print("╚═══════════════════════════╝" + "\n\n");
 
 				if ((dividend.replaceFirst("-", "").chars().allMatch(Character::isDigit))
@@ -89,7 +92,30 @@ public class Main {
 						System.out.println("Cannot make division with such arguments");
 
 				}
+		}
 
+		private static void taskFourExecutor() {
+				String sentence = "";
+				System.out.print("""
+								╔═════════════════════════╗
+								║Insert a word or sentence║
+								║      Or Write Exit      ║
+								╟─────────────────────────╢
+								""");
+				
+				while (!EXIT.equalsIgnoreCase(sentence)) {
+						System.out.print("in:");
+						sentence = in.nextLine();
+						if (EXIT.equalsIgnoreCase(sentence)) {
+						    break;
+						}
+						
+						System.out.print(СharsСounter.countChars(sentence));
+				}
+
+				System.out.print("""
+								╚═════════════════════════╝
+								""");
 		}
 
 }
