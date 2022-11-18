@@ -8,6 +8,7 @@ import ua.foxminded.javaspring.tovarnykh.cleancode.task4.СharsСounter;
 public class Main {
 
 		private static Scanner in;
+		private static final String EXIT = "exit";
 
 		public static void main(String[] args) {
 				in = new Scanner(System.in);
@@ -34,7 +35,7 @@ public class Main {
 								╚═══════════════════════════════╝
 								 >""");
 
-				String choice = in.next();
+				String choice = in.nextLine();
 
 				if (choice.equals("1")) {
 						taskOneExecutor();
@@ -60,7 +61,6 @@ public class Main {
 								║Insert a word or sentence║
 								╟─────────────────────────╢
 								 in:""");
-				in = new Scanner(System.in);
 				System.out.print(" out:" + Anagrams.reverseSentence(in.nextLine()) + """
 
 								╚═════════════════════════╝
@@ -80,9 +80,9 @@ public class Main {
 								╟───────────────────────────╢
 								║      Insert dividend      ║
 								 >""");
-				String dividend = in.next();
+				String dividend = in.nextLine();
 				System.out.print("║      Insert divisor       ║" + "\n >");
-				String divisor = in.next();
+				String divisor = in.nextLine();
 				System.out.print("╚═══════════════════════════╝" + "\n\n");
 
 				if ((dividend.replaceFirst("-", "").chars().allMatch(Character::isDigit))
@@ -95,25 +95,25 @@ public class Main {
 		}
 
 		private static void taskFourExecutor() {
-				in = new Scanner(System.in);
 				String sentence = "";
-
 				System.out.print("""
 								╔═════════════════════════╗
 								║Insert a word or sentence║
 								║      Or Write Exit      ║
 								╟─────────────────────────╢
 								""");
-				while (!"exit".equalsIgnoreCase(sentence)) {
+				
+				while (!EXIT.equalsIgnoreCase(sentence)) {
 						System.out.print("in:");
 						sentence = in.nextLine();
-
-						if (!"exit".equalsIgnoreCase(sentence))
-								System.out.print(СharsСounter.countChars(sentence));
+						if (EXIT.equalsIgnoreCase(sentence)) {
+						    break;
+						}
+						
+						System.out.print(СharsСounter.countChars(sentence));
 				}
 
-				System.out.println("""
-
+				System.out.print("""
 								╚═════════════════════════╝
 								""");
 		}

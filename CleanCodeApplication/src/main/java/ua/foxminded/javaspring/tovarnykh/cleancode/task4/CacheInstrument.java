@@ -20,7 +20,7 @@ public class CacheInstrument {
 		 * Stores cached data.
 		 */
 		private static final LoadingCache<String, LinkedHashMap<Character, Integer>> CACHE = CacheBuilder.newBuilder()
-						.maximumSize(5).build(new CacheLoader<String, LinkedHashMap<Character, Integer>>() {
+						.build(new CacheLoader<>() {
 
 								@Override
 								public LinkedHashMap<Character, Integer> load(String key) {

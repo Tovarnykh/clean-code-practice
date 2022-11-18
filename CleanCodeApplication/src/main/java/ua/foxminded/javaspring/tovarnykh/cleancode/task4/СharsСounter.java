@@ -34,7 +34,13 @@ public class СharsСounter {
 				StringBuilder string = new StringBuilder();
 
 				CacheInstrument.get(sentence)
-								.forEach((character, number) -> string.append(LEFTBORDER + character + RIGHTBORDER + number + NEWLINE));
+								.forEach((character, number) -> string
+								.append(LEFTBORDER)
+								.append(character)
+						    .append(RIGHTBORDER)
+						    .append(number)
+						    .append(NEWLINE)
+);
 
 				return string.toString();
 		}
