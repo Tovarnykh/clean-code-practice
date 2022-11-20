@@ -168,3 +168,63 @@ Use collections and maps where appropriate.
 
 ╚═════════════════════════╝
 ```
+
+## Task 1.5 Java Streams API
+
+**Assignment**:
+
+Write a Formula 1 application. 
+
+There are 2 log files ‘start.log’ and ‘end.log’ that contain start and end data of the best lap for each racer of Formula 1 - Monaco 2018 Racing. (Start and end times are fictional, but the best lap times are true). Data contains only the first 20 minutes that refers to the first stage of the qualification
+
+Q1: For the first 20 minutes (Q1), all cars together on the track try to set the fastest time. The slowest seven cars are eliminated, getting the bottom grid positions. Drivers are allowed to complete as many laps as they want during this short period of time.
+
+**Example**:
+```
+╔═══════════════════════════════╗
+║Select which Program to execute║
+╠───────────────────────────────╣
+║1 - Anagrams                   ║
+║2 - IntegerDivision            ║
+║3 - CharsCounter               ║
+║4 - FormulaOne Leader Board    ║
+║                               ║
+║? - Any symbol to Exit         ║
+╚═══════════════════════════════╝
+ >4
+╔═════════════════════════╗
+║Insert file paths for:   ║
+║   Start.log  End.log    ║
+║   abbreviations.txt     ║
+╟─────────────────────────╢
+start.log>**\start.log
+end.log>**\end.log
+abbreviations.txt>**\abbreviations.txt
+╚═════════════════════════╝
+Loading Files....
+
+╔═══════════════════════════════════════════════════════════════╗
+║                           Formula  One                        ║
+║                           Leader Board                        ║
+╟───────────────────────────────────────────────────────────────╢
+ 1. Sebastian Vettel     | FERRARI                   | 01:04.415
+ 2. Daniel Ricciardo     | RED BULL RACING TAG HEUER | 01:12.013
+ 3. Valtteri Bottas      | MERCEDES                  | 01:12.434
+ 4. Lewis Hamilton       | MERCEDES                  | 01:12.460
+ 5. Stoffel Vandoorne    | MCLAREN RENAULT           | 01:12.463
+ 6. Kimi Raikkonen       | FERRARI                   | 01:12.639
+ 7. Fernando Alonso      | MCLAREN RENAULT           | 01:12.657
+ 8. Sergey Sirotkin      | WILLIAMS MERCEDES         | 01:12.706
+ 9. Charles Leclerc      | SAUBER FERRARI            | 01:12.829
+10. Sergio Perez         | FORCE INDIA MERCEDES      | 01:12.848
+11. Romain Grosjean      | HAAS FERRARI              | 01:12.930
+12. Pierre Gasly         | SCUDERIA TORO ROSSO HONDA | 01:12.941
+13. Carlos Sainz         | RENAULT                   | 01:12.950
+14. Esteban Ocon         | FORCE INDIA MERCEDES      | 01:13.028
+15. Nico Hulkenberg      | RENAULT                   | 01:13.065
+----------------------------------------------------------------
+17. Marcus Ericsson      | SAUBER FERRARI            | 01:13.265
+18. Lance Stroll         | WILLIAMS MERCEDES         | 01:13.323
+19. Kevin Magnussen      | HAAS FERRARI              | 01:13.393
+╚═══════════════════════════════════════════════════════════════╝
+```

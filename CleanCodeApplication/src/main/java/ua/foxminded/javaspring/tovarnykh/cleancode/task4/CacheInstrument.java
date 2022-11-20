@@ -1,6 +1,7 @@
 package ua.foxminded.javaspring.tovarnykh.cleancode.task4;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
@@ -10,7 +11,7 @@ import com.google.common.cache.LoadingCache;
  *
  * @author Victor Tovarnykh
  * @version 0.0.1
- * @since 0.0.1
+ * @since 1.8
  */
 public class CacheInstrument {
 
@@ -27,7 +28,7 @@ public class CacheInstrument {
 
 		    LinkedHashMap<Character, Integer> elements = new LinkedHashMap<>();
 
-		    key.chars().forEach((num) -> {
+		    key.chars().forEach(num -> {
 			Character character = (char) num;
 			if (elements.containsKey(character)) {
 			    elements.put(character, elements.get(character) + 1);
@@ -48,12 +49,12 @@ public class CacheInstrument {
      * Method name: get
      * 
      * @param sentence String which characters needs to be counted.
-     * @return (LinkedHashMap) Map with stored data.
+     * @return (Map) Map with stored data.
      * 
      *         Inside the function: Check is sentence is presented in cache, if not
      *         loads the data inside the cache
      */
-    public static LinkedHashMap<Character, Integer> get(String sentence) {
+    public static Map<Character, Integer> get(String sentence) {
 	if (CACHE.getIfPresent(sentence) != null) {
 	    System.out.println("Loaded from CACHE!");
 	}
