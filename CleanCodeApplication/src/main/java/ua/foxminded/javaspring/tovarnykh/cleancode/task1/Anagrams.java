@@ -24,11 +24,11 @@ public class Anagrams {
 
     /**
      * Method name: reverseSentence
-     * 
+     *
      * @param sentence The sentence to be reverted.
      * @return (String) Reverted sentence.
      * @throws IllegalArgumentException
-     * 
+     *
      *                                  Inside the function: 1. Splitting String on
      *                                  words; 2. Calling the method reverseWord()
      *                                  for each word; 3. Joining back words in one
@@ -46,11 +46,11 @@ public class Anagrams {
 
     /**
      * Method name: reverseWord
-     * 
+     *
      * @param word The word to be reverted.
      * @return (String) Reverted word.
      * @throws IllegalArgumentException
-     * 
+     *
      *                                  Inside the function: 1. Identifying left and
      *                                  right borders of one word; 2. Looking for
      *                                  the signs on the both sides, if the

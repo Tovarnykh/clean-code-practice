@@ -42,7 +42,7 @@ class FileParserTest {
 	    System.out.println("No access to file");
 	}
     }
-    
+
     @Test
     void getAbbreviations() {
 	String answer = null;

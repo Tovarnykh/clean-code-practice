@@ -19,12 +19,12 @@ public class IntegerDivision {
 
     /**
      * Method name: makeDivision
-     * 
+     *
      * @param dividend The number to be divided.
      * @param divisor  The number by which to divide.
      * @return (String) Step by step result of division into a column.
      * @throws IllegalArgumentException
-     * 
+     *
      *                                  Inside the function: 1. Checking the
      *                                  numbers, to fit all conditions of dividing.
      *                                  2. Find the module of both numbers and split
@@ -103,7 +103,7 @@ public class IntegerDivision {
 
     /**
      * Method name: makeDivider
-     * 
+     *
      * @param reminderNumber      Number we keep in memory to subtract.
      * @param amountOfTabulations How many tabs we need to fill in.
      * @return (String) Line to fit ladder like view.
@@ -114,13 +114,13 @@ public class IntegerDivision {
 
     /**
      * Method name: viewCalculations
-     * 
+     *
      * @param dividend           The number to be divided.
      * @param divisor            The number by which to divide.
      * @param devideCalculations Step by step calculations that we did.
      * @param devideAnswer       Answer we receive after calculations.
      * @return (String) Whole column division.
-     * 
+     *
      *         Inside the function: 1. Divide String on three sections. 2. If we
      *         have a new like making tabulation to create a ladder like view. 3.
      *         Insert all the numbers on their places. 3. Claim section borders. 4.
@@ -155,11 +155,11 @@ public class IntegerDivision {
 
     /**
      * Method name: assemblyString
-     * 
+     *
      * @param numberOfSymbols Numbers we receive during calculations.
      * @param delimiter       Delimiter between numbers.
      * @return (String) Line with numbers we write after subtraction.
-     * 
+     *
      *         Inside the function: 1. Creating new line. 2. Fill it with numbers.
      */
     private static String assemblyString(int numberOfSymbols, char delimiter) {
@@ -173,7 +173,7 @@ public class IntegerDivision {
 
     /**
      * Method name: calculateDigit
-     * 
+     *
      * @param dividend Number we keep in memory to subtract.
      * @return (int) Number after subtraction.
      */

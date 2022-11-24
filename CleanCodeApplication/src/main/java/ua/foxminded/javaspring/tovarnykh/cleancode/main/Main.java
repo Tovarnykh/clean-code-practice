@@ -2,6 +2,7 @@ package ua.foxminded.javaspring.tovarnykh.cleancode.main;
 
 import java.io.IOException;
 import java.util.Scanner;
+
 import ua.foxminded.javaspring.tovarnykh.cleancode.task1.Anagrams;
 import ua.foxminded.javaspring.tovarnykh.cleancode.task3.IntegerDivision;
 import ua.foxminded.javaspring.tovarnykh.cleancode.task4.СharsСounter;
@@ -19,9 +20,9 @@ public class Main {
     }
 
     /**
-     * Method name: exerciseChooser
-     * 
-     * 
+     * 4.24.0 * Method name: exerciseChooser
+     * <p>
+     * <p>
      * Inside the function: Prints simple interface to choose program to execute.
      */
     private static void exerciseChooser() {
@@ -56,8 +57,8 @@ public class Main {
 
     /**
      * Method name: exerciseChooser
-     * 
-     * 
+     * <p>
+     * <p>
      * Inside the function: Prints simple interface to input sentence.
      */
     private static void taskOneExecutor() {
@@ -74,8 +75,8 @@ public class Main {
 
     /**
      * Method name: exerciseChooser
-     * 
-     * 
+     * <p>
+     * <p>
      * Inside the function: Prints simple interface to input dividend and divisor.
      */
     private static void taskThreeExecutor() {
@@ -105,8 +106,8 @@ public class Main {
 
     /**
      * Method name: taskFourExecutor
-     * 
-     * 
+     * <p>
+     * <p>
      * Inside the function: Prints simple interface to calculate how many characters
      * in sentence.
      */
@@ -136,8 +137,8 @@ public class Main {
 
     /**
      * Method name: taskFiveExecutor
-     * 
-     * 
+     * <p>
+     * <p>
      * Inside the function: Prints simple interface with Formula One Leader Board
      */
     private static void taskFiveExecutor() {
@@ -148,11 +149,11 @@ public class Main {
 		║   abbreviations.txt     ║
 		╟─────────────────────────╢
 		start.log>""");
-	String start_path = in.nextLine();
+	String startPath = in.nextLine();
 	System.out.print("end.log>");
-	String end_path = in.nextLine();
+	String endPath = in.nextLine();
 	System.out.print("abbreviations.txt>");
-	String abbreviations_path = in.nextLine();
+	String abbreviationsPath = in.nextLine();
 	System.out.print("""
 		╚═════════════════════════╝
 		""");
@@ -169,7 +170,7 @@ public class Main {
 	    	║			    Formula  One		       	║
 	    	║			    Leader Board		        ║
 	    	╟───────────────────────────────────────────────────────────────╢
-	    	""" + FormulaOne.printLeaderBoard(start_path, end_path, abbreviations_path) + """
+	    	""" + FormulaOne.printLeaderBoard(startPath, endPath, abbreviationsPath) + """
 	    	╚═══════════════════════════════════════════════════════════════╝
 	    	""");
 	} catch (InterruptedException e) {

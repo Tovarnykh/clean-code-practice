@@ -17,7 +17,7 @@ public class CacheInstrument {
 
     /**
      * Variable name: CACHE
-     * 
+     *
      * Stores cached data.
      */
     private static final LoadingCache<String, LinkedHashMap<Character, Integer>> CACHE = CacheBuilder.newBuilder()
@@ -47,10 +47,10 @@ public class CacheInstrument {
 
     /**
      * Method name: get
-     * 
+     *
      * @param sentence String which characters needs to be counted.
      * @return (Map) Map with stored data.
-     * 
+     *
      *         Inside the function: Check is sentence is presented in cache, if not
      *         loads the data inside the cache
      */
