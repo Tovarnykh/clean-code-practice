@@ -16,7 +16,7 @@ class FormulaOneTest {
     void printLeaderBoard_CommonExecution_True() {
 	String answer;
 	try {
-	    answer = FormulaOne.printLeaderBoard(PATH_START, PATH_END, PATH_ABBREVIATIONS);
+	    answer = FormulaOne.buildLeaderBoard(PATH_START, PATH_END, PATH_ABBREVIATIONS);
 	} catch (IOException e1) {
 	    answer = "Error";
 	}

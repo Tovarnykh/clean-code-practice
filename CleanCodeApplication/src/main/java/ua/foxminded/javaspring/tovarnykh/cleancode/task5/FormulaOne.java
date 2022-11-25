@@ -33,7 +33,7 @@ public class FormulaOne {
     }
 
     /**
-     * Method name: printLeaderBoard
+     * Method name: buildLeaderBoard
      *
      * @return (String) String with formated LeaderBoard made by FormulaOne
      *         conventions.
@@ -43,11 +43,11 @@ public class FormulaOne {
      *         Pushing best 15 racers data on their`s place 4. Adding last worst 3
      *         racers data to the very end of the list.
      */
-    public static String printLeaderBoard(String startPath, String endPath, String abbreviationsPath)
+    public static String buildLeaderBoard(String startPath, String endPath, String abbreviationsPath)
 	    throws IOException {
 	StringBuilder leaderBoard = new StringBuilder();
 	AtomicInteger iterator = new AtomicInteger(1);
-	Map<String, String> statistic = getFormatedTimeLeaderBoard(startPath, endPath);
+	Map<String, String> statistic = createBoard(startPath, endPath);
 	Map<String, String> racersPersonalData = FileParser.getAbbreviations(abbreviationsPath);
 	int endListPositionsNumber = statistic.size() - NUMBER_OF_LOWEST_RECORDS;
 
@@ -72,34 +72,65 @@ public class FormulaOne {
 
 	return leaderBoard.toString();
     }
-
+    
     /**
-     * Method name: getFormatedTimeLeaderBoard
+     * Method name: createBoard
      *
      * @return (Map) Map with formated time leader board.
      *
      *         Inside the function: 1.Get two parsed files. 2. Create new Map with
      *         reworked time format. 3. Creating new map with full leader board.
      */
-    private static Map<String, String> getFormatedTimeLeaderBoard(String startFile, String endFile) throws IOException {
-	return createSortedRawTimeFormatList(
-		FileParser.getStatistic(startFile), FileParser.getStatistic(endFile)).entrySet().stream()
+    private static Map<String, String> createBoard(String startFile, String endFile) throws IOException {
+	Map<String, Long> rawMap = createRawMap(
+		FileParser.getStatistic(startFile), FileParser.getStatistic(endFile));
+	return sortRawMap(rawMap).entrySet().stream()
 		.collect(Collectors.toMap(Entry::getKey,
 			FormulaOne::formateTime,
 			(oldValue, newValue) -> oldValue, LinkedHashMap::new));
 
     }
-
+    
     /**
-     * Method name: createSortedRawFormatList
+     * Method name: formateTime
      *
-     * @return (Map) Map with sorted calculated data of two files of racers
+     * @return (String) String with formated time from milliseconds to readable view.
+     *
+     *         Inside the function: Converts milliseconds to hours, minutes and seconds.
+     */
+    private static String formateTime(Entry<String, Long> racer) {
+	long racerRecord = racer.getValue();
+	return String.format(TIME_FORMAT,
+		MILLISECONDS.toMinutes(racerRecord),
+		MILLISECONDS.toSeconds(racerRecord) 
+		- MINUTES.toSeconds(MILLISECONDS.toMinutes(racerRecord)),
+		racerRecord - SECONDS.toMillis(MILLISECONDS.toSeconds(racerRecord)));
+    }
+    
+    /**
+     * Method name: sortRawMap
+     *
+     * @return (Map) Map with sorted data.
+     *
+     *         Inside the function: Sort the Map and creating new one with sorted parameters.
+     */
+    private static Map<String, Long> sortRawMap(Map<String, Long> rawMap) {
+	return rawMap.entrySet().stream()
+		.sorted(Map.Entry.comparingByValue())
+		.collect(Collectors
+		.toMap(Entry::getKey, Entry::getValue, 
+			(oldValue, newValue) -> oldValue, LinkedHashMap::new));
+    }
+    
+    /**
+     * Method name: createBoard
+     *
+     * @return (Map) Map with calculated data of two files of racers
      *         statistics with not formated data.
      *
-     *         Inside the function: 1. Put the time difference of two files in the Map. 2. Sort
-     *         the Map and creating new one with sorted parameters.
+     *         Inside the function: Put the time difference of two files in the Map.
      */
-    private static Map<String, Long> createSortedRawTimeFormatList(Map<String, Instant> startStatistic,
+    private static Map<String, Long> createRawMap(Map<String, Instant> startStatistic,
 	    Map<String, Instant> endStatistic) {
 	Map<String, Long> leaderBoard = new LinkedHashMap<>();
 
@@ -110,15 +141,6 @@ public class FormulaOne {
 		.collect(Collectors
 		.toMap(Map.Entry::getKey, Entry::getValue, 
 			(oldValue, newValue) -> oldValue, LinkedHashMap::new));
-    }
-    
-    private static String formateTime(Entry<String, Long> racer) {
-	long racerRecord = racer.getValue();
-	return String.format(TIME_FORMAT,
-		MILLISECONDS.toMinutes(racerRecord),
-		MILLISECONDS.toSeconds(racerRecord) 
-		- MINUTES.toSeconds(MILLISECONDS.toMinutes(racerRecord)),
-		racerRecord - SECONDS.toMillis(MILLISECONDS.toSeconds(racerRecord)));
     }
 
 }

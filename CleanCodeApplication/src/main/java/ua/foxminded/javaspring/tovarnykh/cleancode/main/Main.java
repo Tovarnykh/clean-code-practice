@@ -170,7 +170,7 @@ public class Main {
 	    	║			    Formula  One		       	║
 	    	║			    Leader Board		        ║
 	    	╟───────────────────────────────────────────────────────────────╢
-	    	""" + FormulaOne.printLeaderBoard(startPath, endPath, abbreviationsPath) + """
+	    	""" + FormulaOne.buildLeaderBoard(startPath, endPath, abbreviationsPath) + """
 	    	╚═══════════════════════════════════════════════════════════════╝
 	    	""");
 	} catch (InterruptedException e) {
